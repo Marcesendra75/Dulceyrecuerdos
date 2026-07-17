@@ -1,0 +1,158 @@
+// ════════════════════════════════════════
+// components/_navbar.scss
+// ════════════════════════════════════════
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: $navbar-height;
+  z-index: 1000;
+  background-color: rgba(255, 248, 242, 0.88);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(61, 43, 43, 0.06);
+  transition: background-color $trans-medium, box-shadow $trans-medium;
+
+  &.is-scrolled {
+    background-color: $color-bg-alt;
+    box-shadow: $shadow-soft;
+  }
+
+  &__inner {
+    @include container;
+    @include flex(space-between, center);
+    height: 100%;
+  }
+
+  &__logo { @include flex(flex-start, center); height: 100%; }
+
+  &__logo-img {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    @include respond(md) { height: 60px; }
+  }
+
+  // ── Links desktop
+  &__links {
+    display: none;
+    @include respond(lg) {
+      @include flex(center, center, $space-md);
+    }
+  }
+
+  &__link {
+    font-size: $fs-small;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: $color-text;
+    position: relative;
+    padding: $space-xs 0;
+    transition: color $trans-fast;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -2px;
+      width: 0; height: 2px;
+      background-color: $color-accent;
+      transition: width $trans-fast;
+    }
+
+    &:hover {
+      color: $color-primary;
+      &::after { width: 100%; }
+    }
+  }
+
+  // ── CTA desktop
+  &__cta {
+    display: none;
+    @include respond(lg) {
+      @include btn($color-primary, $color-white);
+      display: inline-flex;
+      padding: 0.65rem 1.5rem;
+      font-size: $fs-small;
+    }
+  }
+
+  // ── Hamburguesa
+  &__toggle {
+    @include flex-col(center, center, 5px);
+    background: none;
+    border: none;
+    width: 32px;
+    height: 24px;
+    z-index: 1100;
+
+    @include respond(lg) { display: none; }
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2.5px;
+      background-color: $color-primary;
+      border-radius: 2px;
+      transition: transform $trans-fast, opacity $trans-fast;
+    }
+
+    &.is-active {
+      span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+      span:nth-child(2) { opacity: 0; }
+      span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+    }
+  }
+
+  // ── Menú mobile (drawer)
+  &__mobile-menu {
+    position: fixed;
+    top: 0; right: 0;
+    height: 100vh;
+    width: min(78vw, 320px);
+    background-color: $color-bg-alt;
+    box-shadow: -8px 0 30px rgba(61, 43, 43, 0.15);
+    padding: calc(#{$navbar-height} + #{$space-md}) $space-md $space-md;
+    transform: translateX(100%);
+    transition: transform $trans-medium;
+    z-index: 1050;
+    @include flex-col(flex-start, stretch, $space-sm);
+
+    &.is-open { transform: translateX(0); }
+
+    @include respond(lg) { display: none; }
+  }
+
+  &__mobile-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $color-text;
+    padding: $space-xs 0;
+    border-bottom: 1px solid $color-border;
+    &:hover { color: $color-primary; }
+  }
+
+  &__mobile-cta {
+    @include btn($color-primary, $color-white);
+    margin-top: $space-sm;
+    width: 100%;
+  }
+
+  // ── Overlay
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(61, 43, 43, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $trans-medium;
+    z-index: 1040;
+
+    &.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

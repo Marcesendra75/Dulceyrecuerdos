@@ -1,0 +1,63 @@
+// ════════════════════════════════════════
+// abstracts/_variables.scss
+// ════════════════════════════════════════
+
+// ── Colores
+$color-primary:       #B94E5C;
+$color-primary-dark:  #8F3A45;
+$color-secondary:     #F2D8C4;
+$color-accent:        #E8A33D;
+$color-bg:            #FFF8F2;
+$color-bg-alt:        #FFFFFF;
+$color-text:          #3D2B2B;
+$color-text-light:    #7A6660;
+$color-white:         #FFFFFF;
+$color-border:        rgba(61, 43, 43, 0.1);
+
+// ── Fondos por página
+$bg-desayunos:        #FBEFE1;
+$bg-picadas:          #F3E8DC;
+$bg-regalos:          #F5EAF0;
+$bg-box-dulces:       #EEF3E8;
+
+// ── Tipografías
+$font-manuscrita:     'Dancing Script', cursive;
+$font-principal:      'Poppins', sans-serif;
+
+// ── Tamaños de fuente
+$fs-hero:             3.2rem;
+$fs-titulo:           2.6rem;
+$fs-body:             1rem;
+$fs-small:            0.875rem;
+
+// ── Espaciados
+$space-xs:   0.5rem;
+$space-sm:   1rem;
+$space-md:   2rem;
+$space-lg:   4rem;
+$space-xl:   6rem;
+
+// ── Bordes y sombras
+$radius-sm:   8px;
+$radius-md:   16px;
+$radius-lg:   24px;
+$radius-pill: 50px;
+
+$shadow-soft:   0 4px 20px rgba(61, 43, 43, 0.08);
+$shadow-medium: 0 8px 30px rgba(61, 43, 43, 0.12);
+$shadow-strong: 0 12px 40px rgba(185, 78, 92, 0.2);
+
+// ── Transiciones
+$trans-fast:   0.2s ease;
+$trans-medium: 0.35s ease;
+$trans-slow:   0.5s ease;
+
+// ── Breakpoints
+$bp-sm:  576px;
+$bp-md:  768px;
+$bp-lg:  992px;
+$bp-xl:  1200px;
+
+// ── Layout
+$container-max: 1280px;
+$navbar-height: 80px;

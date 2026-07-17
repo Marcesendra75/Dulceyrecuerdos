@@ -1,0 +1,236 @@
+// ════════════════════════════════════════
+// pages/_detalle.scss
+// Compartido por todas las páginas internas
+// de producto (desayunos, picadas, regalos, box dulces)
+// ════════════════════════════════════════
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// ── Fondo por página
+body.page-desayunos  { background-color: $bg-desayunos; }
+body.page-picadas    { background-color: $bg-picadas;   }
+body.page-regalos    { background-color: $bg-regalos;   }
+body.page-box-dulces { background-color: $bg-box-dulces; }
+
+// ── Título de la página
+.detalle-titulo {
+  @include titulo($fs-hero);
+  text-align: center;
+  padding-top: $space-xl;
+  margin-bottom: $space-lg;
+}
+
+// ── Cada producto
+.producto-detalle {
+  @include zigzag;
+
+  &--reverse {
+    @include respond(lg) {
+      .producto-detalle__media    { order: 2; }
+      .producto-detalle__contenido { order: 1; }
+    }
+  }
+
+  // Sección especial destacada (ej: Torta Salada)
+  &--destacado {
+    background-color: rgba($color-accent, 0.16);
+    border-radius: $radius-lg;
+    padding: $space-md;
+    border-bottom: none !important;
+
+    .producto-detalle__nombre {
+      @include titulo(2.4rem, $color-primary);
+    }
+    .producto-detalle__precio { color: $color-accent; }
+    .producto-detalle__btn    { @include btn($color-accent, $color-text); }
+  }
+
+  // ── Carrusel 350×350
+  &__media { @include flex-col(center, center, $space-xs); }
+
+  &__carousel {
+    width: 350px;
+    max-width: 100%;
+    height: 350px;
+    @include img-zoom;
+    cursor: zoom-in;
+
+    .carousel-inner,
+    .carousel-item { height: 100%; }
+
+    img { width: 100%; height: 100%; object-fit: cover; }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 15%;
+      opacity: 0;
+      transition: opacity $trans-fast;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon { width: 1.3rem; height: 1.3rem; }
+
+    .carousel-indicators {
+      margin-bottom: 0.6rem;
+      [data-bs-target] {
+        width: 6px; height: 6px;
+        border-radius: 50%;
+        background-color: $color-white;
+        opacity: 0.6; margin: 0 3px;
+      }
+      .active { opacity: 1; }
+    }
+  }
+
+  // Flechas visibles al hover
+  &:hover &__carousel .carousel-control-prev,
+  &:hover &__carousel .carousel-control-next { opacity: 0.85; }
+
+  // ── Miniaturas
+  &__thumbs { @include flex(center, center, $space-xs); margin-top: $space-xs; }
+
+  &__thumb {
+    width: 56px; height: 56px;
+    border-radius: $radius-sm;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity $trans-fast, border-color $trans-fast;
+
+    img { width: 100%; height: 100%; object-fit: cover; }
+
+    &:hover,
+    &.is-active {
+      opacity: 1;
+      border-color: $color-primary;
+    }
+  }
+
+  // ── Contenido
+  &__contenido {
+    text-align: center;
+    @include respond(lg) { text-align: left; }
+  }
+
+  &__nombre {
+    font-family: $font-principal;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: $color-text;
+    margin-bottom: $space-xs;
+  }
+
+  &__ingredientes-titulo {
+    font-size: $fs-small;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: $color-primary;
+    margin-bottom: 0.4rem;
+  }
+
+  &__ingredientes {
+    list-style: disc;
+    padding-left: 1.2rem;
+    color: $color-text-light;
+    font-size: 0.95rem;
+    margin-bottom: $space-sm;
+    max-width: 420px;
+    margin-inline: auto;
+    @include respond(lg) { margin-inline: 0; }
+    li { margin-bottom: 0.3rem; }
+  }
+
+  &__precio {
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: $color-primary;
+    margin-bottom: $space-sm;
+    span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: $color-text-light;
+      margin-left: 0.4rem;
+    }
+  }
+
+  &__btn { @include btn; }
+}
+
+// ── Modal de zoom
+.modal-zoom {
+  .modal-content { background: transparent; border: none; }
+  .modal-body    { padding: 0; }
+
+  .btn-close {
+    position: absolute;
+    top: -40px; right: 0;
+    filter: invert(1);
+    opacity: 0.9;
+    z-index: 2;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: $radius-md;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon { width: 2rem; height: 2rem; }
+}
+
+// ── Términos y condiciones
+body.page-terminos { background-color: #FDF5EE; }
+
+.terminos-wrap {
+  padding-top: calc(80px + 3rem);
+  padding-bottom: 6rem;
+}
+
+.terminos-inner {
+  max-width: 780px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.terminos__titulo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #B94E5C;
+  margin-bottom: 0.3rem;
+}
+
+.terminos__fecha {
+  font-size: 0.875rem;
+  color: #7A6660;
+  margin-bottom: 3rem;
+}
+
+.terminos__seccion {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(61, 43, 43, 0.08);
+
+  &:last-child { border-bottom: none; }
+}
+
+.terminos__subtitulo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3D2B2B;
+  margin-bottom: 0.75rem;
+}
+
+.terminos-inner p {
+  color: #7A6660;
+  line-height: 1.8;
+  font-size: 1rem;
+
+  strong { color: #3D2B2B; }
+  a { color: #B94E5C; text-decoration: underline; }
+}

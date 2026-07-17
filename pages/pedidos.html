@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos | Dulces &amp; Recuerdos</title>
+  <meta name="description" content="Hacé tu pedido de desayunos, picadas y regalos a domicilio en Mendoza.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../img/favicon.png" type="image/png">
+</head>
+<body class="page-pedidos">
+
+  <!-- ══ NAVBAR ══ -->
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo">
+        <img src="../img/logo-dulces-recuerdos.png" alt="Dulces &amp; Recuerdos" class="navbar__logo-img">
+      </a>
+      <nav class="navbar__links">
+        <a href="../pages/desayunos.html"  class="navbar__link">Desayunos</a>
+        <a href="../pages/picadas.html"    class="navbar__link">Picadas</a>
+        <a href="../pages/regalos.html"    class="navbar__link">Regalos Personalizados</a>
+        <a href="../pages/box-dulces.html" class="navbar__link">Box Dulces</a>
+        <a href="../index.html#quienes-somos" class="navbar__link">Quiénes Somos</a>
+      </nav>
+      <a href="pedidos.html" class="navbar__cta">Pedí ahora</a>
+      <button class="navbar__toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="navbar__mobile-menu">
+      <a href="../pages/desayunos.html"  class="navbar__mobile-link">Desayunos</a>
+      <a href="../pages/picadas.html"    class="navbar__mobile-link">Picadas</a>
+      <a href="../pages/regalos.html"    class="navbar__mobile-link">Regalos Personalizados</a>
+      <a href="../pages/box-dulces.html" class="navbar__mobile-link">Box Dulces</a>
+      <a href="../index.html#quienes-somos" class="navbar__mobile-link">Quiénes Somos</a>
+      <a href="pedidos.html" class="navbar__mobile-cta">Pedí ahora</a>
+    </nav>
+    <div class="navbar__overlay"></div>
+  </header>
+
+  <main>
+
+    <!-- ══ HERO ══ -->
+    <div class="pedidos-hero">
+      <h1 class="pedidos-hero__titulo">Hacé tu pedido</h1>
+      <p class="pedidos-hero__subtitulo">Completá el formulario y te contactamos por WhatsApp para confirmar todos los detalles.</p>
+    </div>
+
+    <!-- ══ FORMULARIO ══ -->
+    <div class="pedidos-form-wrap">
+      <form class="pedidos-form" id="formPedido" novalidate>
+
+        <!-- Datos personales -->
+        <div class="pedidos-form__fila">
+          <div>
+            <label class="pedidos-form__label" for="nombre">Tu nombre</label>
+            <input class="pedidos-form__input" type="text" id="nombre" name="nombre" placeholder="Ej: María González" required>
+          </div>
+          <div>
+            <label class="pedidos-form__label" for="telefono">Tu teléfono (opcional)</label>
+            <input class="pedidos-form__input" type="tel" id="telefono" name="telefono" placeholder="Ej: 261 4123456">
+          </div>
+        </div>
+
+        <!-- Fecha y dirección -->
+        <div class="pedidos-form__fila">
+          <div>
+            <label class="pedidos-form__label" for="fecha">Fecha de entrega</label>
+            <input class="pedidos-form__input" type="date" id="fecha" name="fecha" required>
+          </div>
+          <div>
+            <label class="pedidos-form__label" for="hora">Hora estimada</label>
+            <input class="pedidos-form__input" type="time" id="hora" name="hora" required>
+          </div>
+        </div>
+
+        <div class="pedidos-form__grupo">
+          <label class="pedidos-form__label" for="direccion">Dirección de entrega</label>
+          <input class="pedidos-form__input" type="text" id="direccion" name="direccion" placeholder="Calle, número, barrio — Mendoza" required>
+        </div>
+
+        <hr class="pedidos-form__sep">
+
+        <!-- Paso 1: Categoría -->
+        <div class="pedidos-form__grupo">
+          <label class="pedidos-form__label" for="categoria">¿Qué querés pedir?</label>
+          <div class="pedidos-form__select-wrap">
+            <select class="pedidos-form__select" id="categoria" name="categoria" required>
+              <option value="" disabled selected>Elegí una categoría</option>
+              <option value="desayunos">Desayunos</option>
+              <option value="picadas">Picadas</option>
+              <option value="regalos">Regalos Personalizados</option>
+              <option value="caja-up">Caja Up</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Paso 2: Opciones por categoría (acordeón) -->
+        <div class="pedidos-form__grupo" id="opcionesWrap" style="display:none;">
+          <label class="pedidos-form__label">Elegí el producto</label>
+
+          <!-- DESAYUNOS -->
+          <div id="acc-desayunos" class="pedidos-accordion accordion" style="display:none;">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#col-desayunos">
+                  Ver opciones de desayunos
+                </button>
+              </h2>
+              <div id="col-desayunos" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <label><input type="radio" name="producto" value="Desayuno Box Sorpresa"> Desayuno Box Sorpresa</label>
+                  <label><input type="radio" name="producto" value="Desayuno Especial"> Desayuno Especial</label>
+                  <label><input type="radio" name="producto" value="Desayuno Mendocino"> Desayuno Mendocino</label>
+                  <label><input type="radio" name="producto" value="Desayuno Saludable"> Desayuno Saludable</label>
+                  <label><input type="radio" name="producto" value="Desayuno Temático"> Desayuno Temático</label>
+                  <label><input type="radio" name="producto" value="Desayuno Para Dos"> Desayuno Para Dos</label>
+                  <label><input type="radio" name="producto" value="Desayuno Completo"> Desayuno Completo</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PICADAS -->
+          <div id="acc-picadas" class="pedidos-accordion accordion" style="display:none;">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#col-picadas">
+                  Ver opciones de picadas
+                </button>
+              </h2>
+              <div id="col-picadas" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <label><input type="radio" name="producto" value="Picada de Fiambres"> Picada de Fiambres</label>
+                  <label><input type="radio" name="producto" value="Tabla de Fiambres"> Tabla de Fiambres</label>
+                  <label><input type="radio" name="producto" value="Torta Salada Única"> Torta Salada Única</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PORTA RETRATOS -->
+          <div id="acc-regalos" class="pedidos-accordion accordion" style="display:none;">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#col-porta">
+                  Ver opciones de regalos
+                </button>
+              </h2>
+              <div id="col-porta" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <label><input type="radio" name="producto" value="Porta Retrato Spotify"> Porta Retrato Spotify</label>
+                  <label><input type="radio" name="producto" value="Cuadro Nacimiento Bebé"> Cuadro Nacimiento Bebé</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <hr class="pedidos-form__sep">
+
+        <!-- Detalle especial -->
+        <div class="pedidos-form__grupo">
+          <label class="pedidos-form__label" for="detalle">¿Algún detalle especial?</label>
+          <textarea class="pedidos-form__textarea" id="detalle" name="detalle"
+            placeholder="Dedicatoria, nombre del homenajeado/a, alergias, colores preferidos, instrucciones de entrega..."></textarea>
+          <p class="pedidos-form__hint">Este campo es opcional pero nos ayuda a personalizar tu pedido.</p>
+        </div>
+
+        <!-- Botón enviar -->
+        <button type="button" class="pedidos-form__btn" id="btnEnviar" disabled>
+          📲 Enviar pedido por WhatsApp
+        </button>
+
+      </form>
+
+      <!-- Mensaje de confirmación (se muestra luego de enviar) -->
+      <div class="pedidos-ok" id="pedidosOk">
+        <div class="pedidos-ok__icono">🎉</div>
+        <h2 class="pedidos-ok__titulo">¡Pedido enviado!</h2>
+        <p class="pedidos-ok__texto">Te redirigimos a WhatsApp para confirmar todos los detalles. Si no abrió automáticamente, hacé clic en el botón de arriba.</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer" id="quienes-somos">
+    <div class="footer__grid">
+      <div>
+        <img src="../img/logo-dulces-recuerdos.png" alt="Dulces &amp; Recuerdos" class="footer__logo-img">
+        <p class="footer__desc">Desayunos, picadas y regalos personalizados a domicilio. Hacemos que cada ocasión especial se sienta única.</p>
+        <div class="footer__redes">
+          <a href="https://instagram.com/dulcesmasrecuerdos" target="_blank" rel="noopener" class="footer__red-link" aria-label="Instagram">
+            <img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=64" alt="Instagram"></a>
+          <a href="#" class="footer__red-link" aria-label="Facebook">
+            <img src="https://www.google.com/s2/favicons?domain=facebook.com&sz=64" alt="Facebook"></a>
+          <a href="https://wa.me/5492613039166" target="_blank" rel="noopener" class="footer__red-link" aria-label="WhatsApp">
+            <img src="https://www.google.com/s2/favicons?domain=whatsapp.com&sz=64" alt="WhatsApp"></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__titulo">Productos</p>
+        <nav class="footer__links">
+          <a href="../pages/desayunos.html"  class="footer__link">Desayunos</a>
+          <a href="../pages/picadas.html"    class="footer__link">Picadas</a>
+          <a href="../pages/regalos.html"    class="footer__link">Regalos Personalizados</a>
+          <a href="../pages/box-dulces.html" class="footer__link">Box Dulces</a>
+          <a href="../index.html#quienes-somos" class="footer__link">Quiénes Somos</a>
+          <a href="terminos.html"                    class="footer__link">Términos y Condiciones</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__titulo">Nuestro Local</p>
+        <div class="footer__mapa">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348!2d-68.85!3d-32.94!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación del local"></iframe>
+        </div>
+        <p class="footer__direccion">Dirección del negocio, Mendoza — ver en Google Maps</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Dulces &amp; Recuerdos — Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/pedidos.js"></script>
+</body>
+</html>

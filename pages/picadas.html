@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Picadas | Dulces &amp; Recuerdos</title>
+  <meta name="description" content="Picadas de fiambres, tablas y nuestra especialidad Torta Salada. Envíos en Mendoza.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../img/favicon.png" type="image/png">
+</head>
+<body class="page-picadas">
+
+  <!-- ══ NAVBAR ══ -->
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo">
+        <img src="../img/logo-dulces-recuerdos.png" alt="Dulces &amp; Recuerdos" class="navbar__logo-img">
+      </a>
+      <nav class="navbar__links">
+        <a href="../pages/desayunos.html"  class="navbar__link">Desayunos</a>
+        <a href="../pages/picadas.html"    class="navbar__link">Picadas</a>
+        <a href="../pages/regalos.html"    class="navbar__link">Regalos Personalizados</a>
+        <a href="../pages/box-dulces.html" class="navbar__link">Box Dulces</a>
+        <a href="../index.html#quienes-somos" class="navbar__link">Quiénes Somos</a>
+      </nav>
+      <a href="pedidos.html" class="navbar__cta">Pedí ahora</a>
+      <button class="navbar__toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="navbar__mobile-menu">
+      <a href="../pages/desayunos.html"  class="navbar__mobile-link">Desayunos</a>
+      <a href="../pages/picadas.html"    class="navbar__mobile-link">Picadas</a>
+      <a href="../pages/regalos.html"    class="navbar__mobile-link">Regalos Personalizados</a>
+      <a href="../pages/box-dulces.html" class="navbar__mobile-link">Box Dulces</a>
+      <a href="../index.html#quienes-somos" class="navbar__mobile-link">Quiénes Somos</a>
+      <a href="pedidos.html" class="navbar__mobile-cta">Pedí ahora</a>
+    </nav>
+    <div class="navbar__overlay"></div>
+  </header>
+
+  <main>
+    <h1 class="detalle-titulo">Nuestras Picadas</h1>
+
+    <!-- ═══ Picada de Fiambres ═══ -->
+    <article class="producto-detalle" id="fiambres">
+      <div class="producto-detalle__media">
+        <div class="producto-detalle__carousel">
+          <div id="carousel-fiambres" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel-fiambres" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carousel-fiambres" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carousel-fiambres" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#carousel-fiambres" data-bs-slide-to="3"></button>
+            </div>
+            <div class="carousel-inner" data-bs-toggle="modal" data-bs-target="#modal-fiambres">
+              <div class="carousel-item  active"><img src="../img/fiambres-1.jpg" alt="Picada de Fiambres foto 1"></div>
+              <div class="carousel-item"><img src="../img/fiambres-2.jpg" alt="Picada de Fiambres foto 2"></div>
+              <div class="carousel-item"><img src="../img/fiambres-3.jpg" alt="Picada de Fiambres foto 3"></div>
+              <div class="carousel-item"><img src="../img/fiambres-4.jpg" alt="Picada de Fiambres foto 4"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-fiambres" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-fiambres" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+          </div>
+        </div>
+        <div class="producto-detalle__thumbs">
+          <button class="producto-detalle__thumb  is-active" data-bs-target="#carousel-fiambres" data-bs-slide-to="0"><img src="../img/fiambres-1.jpg" alt="miniatura 1"></button>
+          <button class="producto-detalle__thumb" data-bs-target="#carousel-fiambres" data-bs-slide-to="1"><img src="../img/fiambres-2.jpg" alt="miniatura 2"></button>
+          <button class="producto-detalle__thumb" data-bs-target="#carousel-fiambres" data-bs-slide-to="2"><img src="../img/fiambres-3.jpg" alt="miniatura 3"></button>
+          <button class="producto-detalle__thumb" data-bs-target="#carousel-fiambres" data-bs-slide-to="3"><img src="../img/fiambres-4.jpg" alt="miniatura 4"></button>
+        </div>
+      </div>
+      <div class="producto-detalle__contenido">
+        <h2 class="producto-detalle__nombre">Picada de Fiambres</h2>
+        <p class="producto-detalle__ingredientes-titulo">Ingredientes</p>
+        <ul class="producto-detalle__ingredientes">
+          <li>Ingrediente 1 (completar)</li>
+          <li>Ingrediente 2 (completar)</li>
+          <li>Ingrediente 3 (completar)</li>
+          <li>Ingrediente 4 (completar)</li>
+        </ul>
+        <p class="producto-detalle__precio">$0.000<span>/ unidad</span></p>
+        <a href="pedidos.html" class="producto-detalle__btn">Pedir ahora</a>
+      </div>
+    </article>
+    <!-- Modal Picada de Fiambres -->
+    <div class="modal fade modal-zoom" id="modal-fiambres" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          <div class="modal-body">
+            <div id="modal-fiambres-c" class="carousel slide" data-bs-ride="false">
+              <div class="carousel-indicators">              <button type="button" data-bs-target="#modal-fiambres-c" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#modal-fiambres-c" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#modal-fiambres-c" data-bs-slide-to="2"></button>
+              <button type="button" data-bs-target="#modal-fiambres-c" data-bs-slide-to="3"></button></div>
+              <div class="carousel-inner">                <div class="carousel-item  active"><img src="../img/fiambres-1.jpg" alt="Picada de Fiambres ampliada 1"></div>
+                <div class="carousel-item"><img src="../img/fiambres-2.jpg" alt="Picada de Fiambres ampliada 2"></div>
+                <div class="carousel-item"><img src="../img/fiambres-3.jpg" alt="Picada de Fiambres ampliada 3"></div>
+                <div class="carousel-item"><img src="../img/fiambres-4.jpg" alt="Picada de Fiambres ampliada 4"></div></div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#modal-fiambres-c" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+              <button class="carousel-control-next" type="button" data-bs-target="#modal-fiambres-c" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ═══ Tabla de Fiambres ═══ -->
+    <article class="producto-detalle producto-detalle--reverse" id="tabla-fiambres">
+      <div class="producto-detalle__media">
+        <div class="producto-detalle__carousel">
+          <div id="carousel-tabla-fiambres" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel-tabla-fiambres" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carousel-tabla-fiambres" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carousel-tabla-fiambres" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#carousel-tabla-fiambres" data-bs-slide-to="3"></button>
+            </div>
+            <div class="carousel-inner" data-bs-toggle="modal" data-bs-target="#modal-tabla-fiambres">
+              <div class="carousel-item  active"><img src="../img/tabla-fiambres-1.jpg" alt="Tabla de Fiambres foto 1"></div>
+              <div class="carousel-item"><img src="../img/tabla-fiambres-2.jpg" alt="Tabla de Fiambres foto 2"></div>
+              <div class="carousel-item"><img src="../img/tabla-fiambres-3.jpg" alt="Tabla de Fiambres foto 3"></div>
+              <div class="carousel-item"><img src="../img/tabla-fiambres-4.jpg" alt="Tabla de Fiambres foto 4"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-tabla-fiambres" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-tabla-fiambres" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+          </div>
+        </div>
+        <div class="producto-detalle__thumbs">
+          <button class="producto-detalle__thumb  is-active" data-bs-target="#carousel-tabla-fiambres" data-bs-slide-to="0"><img src="../img/tabla-fiambres-1.jpg" alt="miniatura 1"></button>
+          <button class="producto-detalle__thumb" data-bs-target="#carousel-tabla-fiambres" data-bs-slide-to="1"><img src="../img/tabla-fiambres-2.jpg" alt="miniatura 2"></button>
+          <button class="producto-detalle__thumb" data-bs-target="#carousel-tabla-fiambres" data-bs-slide-to="2"><img src="../img/tabla-fiambres-3.jpg" alt="miniatura 3"></button>
+          <button class="producto-detalle__thumb" data-bs-target="#carousel-tabla-fiambres" data-bs-slide-to="3"><img src="../img/tabla-fiambres-4.jpg" alt="miniatura 4"></button>
+        </div>
+      </div>
+      <div class="producto-detalle__contenido">
+        <h2 class="producto-detalle__nombre">Tabla de Fiambres</h2>
+        <p class="producto-detalle__ingredientes-titulo">Ingredientes</p>
+        <ul class="producto-detalle__ingredientes">
+          <li>Ingrediente 1 (completar)</li>
+          <li>Ingrediente 2 (completar)</li>
+          <li>Ingrediente 3 (completar)</li>
+          <li>Ingrediente 4 (completar)</li>
+        </ul>
+        <p class="producto-detalle__precio">$0.000<span>/ unidad</span></p>
+        <a href="pedidos.html" class="producto-detalle__btn">Pedir ahora</a>
+      </div>
+    </article>
+    <!-- Modal Tabla de Fiambres -->
+    <div class="modal fade modal-zoom" id="modal-tabla-fiambres" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          <div class="modal-body">
+            <div id="modal-tabla-fiambres-c" class="carousel slide" data-bs-ride="false">
+              <div class="carousel-indicators">              <button type="button" data-bs-target="#modal-tabla-fiambres-c" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#modal-tabla-fiambres-c" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#modal-tabla-fiambres-c" data-bs-slide-to="2"></button>
+              <button type="button" data-bs-target="#modal-tabla-fiambres-c" data-bs-slide-to="3"></button></div>
+              <div class="carousel-inner">                <div class="carousel-item  active"><img src="../img/tabla-fiambres-1.jpg" alt="Tabla de Fiambres ampliada 1"></div>
+                <div class="carousel-item"><img src="../img/tabla-fiambres-2.jpg" alt="Tabla de Fiambres ampliada 2"></div>
+                <div class="carousel-item"><img src="../img/tabla-fiambres-3.jpg" alt="Tabla de Fiambres ampliada 3"></div>
+                <div class="carousel-item"><img src="../img/tabla-fiambres-4.jpg" alt="Tabla de Fiambres ampliada 4"></div></div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#modal-tabla-fiambres-c" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+              <button class="carousel-control-next" type="button" data-bs-target="#modal-tabla-fiambres-c" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ═══ Probá nuestra especialidad ¡Torta Salada! Única ═══ -->
+    <article class="producto-detalle producto-detalle--destacado" id="torta-salada">
+      <div class="producto-detalle__media">
+        <div class="producto-detalle__carousel">
+          <div id="carousel-torta-salada" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel-torta-salada" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carousel-torta-salada" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carousel-torta-salada" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#carousel-torta-salada" data-bs-slide-to="3"></button>
+            </div>
+            <div class="carousel-inner" data-bs-toggle="modal" data-bs-target="#modal-torta-salada">
+              <div class="carousel-item  active"><img src="../img/torta-salada-1.jpg" alt="Probá nuestra especialidad ¡Torta Salada! Única foto 1"></div>
+              <div class="carousel-item"><img src="../img/torta-salada-2.jpg" alt="Probá nuestra especialidad ¡Torta Salada! Única foto 2"></div>
+              <div class="carousel-item"><img src="../img/torta-salada-3.jpg" alt="Probá nuestra especialidad ¡Torta Salada! Única foto 3"></div>
+              <div class="carousel-item"><img src="../img/torta-salada-4.jpg" alt="Probá nuestra especialidad ¡Torta Salada! Única foto 4"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-torta-salada" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-torta-salada" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+          </div>
+        </div>
+        <div class="producto-detalle__thumbs">
+          <button class="producto-detalle__thumb  is-active" data-bs-target="#carousel-torta-salada" data-bs-slide-to="0"><img src="../img/torta-salada-1.jpg" alt="miniatura 1"></button>
+          <button class="producto-detalle__thumb" data-bs-target="#carousel-torta-salada" data-bs-slide-to="1"><img src="../img/torta-salada-2.jpg" alt="miniatura 2"></button>
+          <button class="producto-detalle__thumb" data-bs-target="#carousel-torta-salada" data-bs-slide-to="2"><img src="../img/torta-salada-3.jpg" alt="miniatura 3"></button>
+          <button class="producto-detalle__thumb" data-bs-target="#carousel-torta-salada" data-bs-slide-to="3"><img src="../img/torta-salada-4.jpg" alt="miniatura 4"></button>
+        </div>
+      </div>
+      <div class="producto-detalle__contenido">
+        <h2 class="producto-detalle__nombre">Probá nuestra especialidad ¡Torta Salada! Única</h2>
+        <p class="producto-detalle__ingredientes-titulo">Ingredientes</p>
+        <ul class="producto-detalle__ingredientes">
+          <li>Ingrediente 1 (completar)</li>
+          <li>Ingrediente 2 (completar)</li>
+          <li>Ingrediente 3 (completar)</li>
+          <li>Ingrediente 4 (completar)</li>
+        </ul>
+        <p class="producto-detalle__precio">$0.000<span>/ unidad</span></p>
+        <a href="pedidos.html" class="producto-detalle__btn">Pedir ahora</a>
+      </div>
+    </article>
+    <!-- Modal Probá nuestra especialidad ¡Torta Salada! Única -->
+    <div class="modal fade modal-zoom" id="modal-torta-salada" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          <div class="modal-body">
+            <div id="modal-torta-salada-c" class="carousel slide" data-bs-ride="false">
+              <div class="carousel-indicators">              <button type="button" data-bs-target="#modal-torta-salada-c" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#modal-torta-salada-c" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#modal-torta-salada-c" data-bs-slide-to="2"></button>
+              <button type="button" data-bs-target="#modal-torta-salada-c" data-bs-slide-to="3"></button></div>
+              <div class="carousel-inner">                <div class="carousel-item  active"><img src="../img/torta-salada-1.jpg" alt="Probá nuestra especialidad ¡Torta Salada! Única ampliada 1"></div>
+                <div class="carousel-item"><img src="../img/torta-salada-2.jpg" alt="Probá nuestra especialidad ¡Torta Salada! Única ampliada 2"></div>
+                <div class="carousel-item"><img src="../img/torta-salada-3.jpg" alt="Probá nuestra especialidad ¡Torta Salada! Única ampliada 3"></div>
+                <div class="carousel-item"><img src="../img/torta-salada-4.jpg" alt="Probá nuestra especialidad ¡Torta Salada! Única ampliada 4"></div></div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#modal-torta-salada-c" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+              <button class="carousel-control-next" type="button" data-bs-target="#modal-torta-salada-c" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer" id="quienes-somos">
+    <div class="footer__grid">
+      <div>
+        <img src="../img/logo-dulces-recuerdos.png" alt="Dulces &amp; Recuerdos" class="footer__logo-img">
+        <p class="footer__desc">Desayunos, picadas y regalos personalizados a domicilio. Hacemos que cada ocasión especial se sienta única.</p>
+        <div class="footer__redes">
+          <a href="https://instagram.com/dulcesmasrecuerdos" target="_blank" rel="noopener" class="footer__red-link" aria-label="Instagram">
+            <img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=64" alt="Instagram"></a>
+          <a href="#" class="footer__red-link" aria-label="Facebook">
+            <img src="https://www.google.com/s2/favicons?domain=facebook.com&sz=64" alt="Facebook"></a>
+          <a href="https://wa.me/5492613039166" target="_blank" rel="noopener" class="footer__red-link" aria-label="WhatsApp">
+            <img src="https://www.google.com/s2/favicons?domain=whatsapp.com&sz=64" alt="WhatsApp"></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__titulo">Productos</p>
+        <nav class="footer__links">
+          <a href="../pages/desayunos.html"  class="footer__link">Desayunos</a>
+          <a href="../pages/picadas.html"    class="footer__link">Picadas</a>
+          <a href="../pages/regalos.html"    class="footer__link">Regalos Personalizados</a>
+          <a href="../pages/box-dulces.html" class="footer__link">Box Dulces</a>
+          <a href="../index.html#quienes-somos" class="footer__link">Quiénes Somos</a>
+          <a href="terminos.html"                    class="footer__link">Términos y Condiciones</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__titulo">Nuestro Local</p>
+        <div class="footer__mapa">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348!2d-68.85!3d-32.94!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación del local"></iframe>
+        </div>
+        <p class="footer__direccion">Dirección del negocio, Mendoza — ver en Google Maps</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Dulces &amp; Recuerdos — Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

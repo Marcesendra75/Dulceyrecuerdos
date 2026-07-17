@@ -1,0 +1,95 @@
+// ════════════════════════════════════════
+// components/_footer.scss
+// ════════════════════════════════════════
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.footer {
+  background-color: $color-text;
+  color: rgba(255, 255, 255, 0.85);
+  padding-top: $space-lg;
+
+  &__grid {
+    @include container;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-lg;
+    padding-bottom: $space-lg;
+
+    @include respond(md) { grid-template-columns: 1.3fr 1fr 1fr; }
+  }
+
+  &__logo-img {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+    background-color: $color-bg-alt;
+    border-radius: $radius-sm;
+    padding: $space-xs $space-sm;
+    margin-bottom: $space-sm;
+  }
+
+  &__desc {
+    font-size: $fs-small;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 320px;
+    margin-bottom: $space-sm;
+  }
+
+  &__redes { @include flex(flex-start, center, $space-sm); }
+
+  &__red-link {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    @include flex(center, center);
+    transition: background-color $trans-fast, transform $trans-fast;
+
+    img, svg { width: 18px; height: 18px; }
+
+    &:hover {
+      background-color: $color-primary;
+      transform: translateY(-3px);
+    }
+  }
+
+  &__titulo {
+    font-weight: 700;
+    font-size: 1rem;
+    color: $color-white;
+    margin-bottom: $space-sm;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &__links { @include flex-col(flex-start, flex-start, 0.7rem); }
+
+  &__link {
+    font-size: $fs-small;
+    color: rgba(255, 255, 255, 0.65);
+    transition: color $trans-fast;
+    &:hover { color: $color-accent; }
+  }
+
+  &__mapa {
+    width: 100%; height: 160px;
+    border-radius: $radius-md;
+    overflow: hidden;
+    margin-top: $space-xs;
+    iframe { width: 100%; height: 100%; border: none; }
+  }
+
+  &__direccion {
+    font-size: $fs-small;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: $space-xs;
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: $space-sm 0;
+    text-align: center;
+    font-size: $fs-small;
+    color: rgba(255, 255, 255, 0.45);
+  }
+}

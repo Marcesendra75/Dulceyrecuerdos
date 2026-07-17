@@ -1,0 +1,26 @@
+// ════════════════════════════════════════
+// main.scss — entry point único del sitio
+// Compila a: css/estilo.css
+// Comando:   sass --watch sass/main.scss:css/estilo.css
+// ════════════════════════════════════════
+
+// ── Abstracts
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins'   as *;
+
+// ── Base
+@use 'base/base';
+
+// ── Componentes compartidos (todas las páginas)
+@use 'components/navbar';
+@use 'components/footer';
+
+// ── Páginas
+@use 'pages/index';    // estilos del index.html
+@use 'pages/detalle';  // estilos de desayunos, picadas, regalos, box-dulces
+@use 'pages/pedidos';  // página de pedidos
+
+// ── Cuando agregues una página nueva:
+// 1. Creá sass/pages/_nueva-pagina.scss
+// 2. Agregá @use 'pages/nueva-pagina'; acá abajo
+// 3. Compilá — listo, sin tocar nada más

@@ -1,0 +1,119 @@
+// ════════════════════════════════════════
+// abstracts/_mixins.scss
+// ════════════════════════════════════════
+@use 'variables' as *;
+
+// ── Responsive mobile-first
+@mixin respond($bp) {
+  @if $bp == sm { @media (min-width: $bp-sm) { @content; } }
+  @if $bp == md { @media (min-width: $bp-md) { @content; } }
+  @if $bp == lg { @media (min-width: $bp-lg) { @content; } }
+  @if $bp == xl { @media (min-width: $bp-xl) { @content; } }
+}
+
+// ── Flex
+@mixin flex($justify: flex-start, $align: center, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  @if $gap != 0 { gap: $gap; }
+}
+
+@mixin flex-col($justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
+  @if $gap != 0 { gap: $gap; }
+}
+
+// ── Contenedor centrado
+@mixin container {
+  width: 100%;
+  max-width: $container-max;
+  margin-inline: auto;
+  padding-inline: $space-sm;
+  @include respond(lg) { padding-inline: $space-md; }
+}
+
+// ── Botón
+@mixin btn($bg: #B94E5C, $color: #FFFFFF) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  background-color: $bg;
+  color: $color;
+  font-family: $font-principal;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(185, 78, 92, 0.2);
+    background-color: #8F3A45;
+  }
+  &:active { transform: translateY(-1px); }
+}
+
+// ── Imagen con hover zoom
+@mixin img-zoom {
+  overflow: hidden;
+  border-radius: $radius-md;
+  box-shadow: $shadow-medium;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  &:hover img { transform: scale(1.08); }
+}
+
+// ── Título manuscrito
+// Nota: valores hardcodeados para evitar errores de scope con @use
+@mixin titulo($size: 2.6rem, $color: #B94E5C) {
+  font-family: $font-manuscrita;
+  font-size: $size;
+  font-weight: 700;
+  color: $color;
+  line-height: 1.2;
+}
+
+// ── Grid zigzag
+@mixin zigzag {
+  @include container;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: $space-md;
+  padding-block: $space-lg;
+
+  @include respond(lg) {
+    grid-template-columns: 1fr 1fr;
+    gap: $space-xl;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $color-border;
+  }
+}
+
+// ── Scroll reveal
+@mixin reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  @media (prefers-reduced-motion: reduce) { transition: none; }
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,221 @@
+// ════════════════════════════════════════
+// pages/_pedidos.scss
+// ════════════════════════════════════════
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+body.page-pedidos {
+  background-color: #2E1A1F;
+  min-height: 100vh;
+}
+
+.pedidos-hero {
+  padding-top: calc(#{$navbar-height} + #{$space-lg});
+  padding-bottom: $space-xl;
+  @include container;
+  text-align: center;
+
+  &__titulo {
+    font-family: $font-manuscrita;
+    font-size: 3rem;
+    color: $color-secondary;
+    margin-bottom: $space-xs;
+  }
+
+  &__subtitulo {
+    color: rgba(242, 216, 196, 0.7);
+    font-size: 1.05rem;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+}
+
+// ── Tarjeta del formulario
+.pedidos-form-wrap {
+  @include container;
+  max-width: 720px;
+  padding-bottom: $space-xl;
+}
+
+.pedidos-form {
+  background-color: rgba(255, 248, 242, 0.06);
+  border: 1px solid rgba(242, 216, 196, 0.15);
+  border-radius: $radius-lg;
+  padding: $space-lg;
+  backdrop-filter: blur(8px);
+
+  // ── Labels
+  &__label {
+    display: block;
+    font-size: $fs-small;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: $color-secondary;
+    margin-bottom: 0.5rem;
+  }
+
+  // ── Inputs, selects, textarea
+  &__input,
+  &__select,
+  &__textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background-color: rgba(255, 248, 242, 0.08);
+    border: 1px solid rgba(242, 216, 196, 0.2);
+    border-radius: $radius-sm;
+    color: $color-white;
+    font-family: $font-principal;
+    font-size: $fs-body;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    appearance: none;
+
+    &::placeholder { color: rgba(255,255,255,0.35); }
+
+    &:focus {
+      outline: none;
+      border-color: $color-accent;
+      background-color: rgba(255, 248, 242, 0.12);
+    }
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+  }
+
+  &__select option { background-color: #2E1A1F; color: $color-white; }
+
+  &__textarea { resize: vertical; min-height: 110px; }
+
+  // ── Grupo de campo
+  &__grupo {
+    margin-bottom: $space-md;
+  }
+
+  // ── Dos columnas en desktop
+  &__fila {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-md;
+    margin-bottom: $space-md;
+
+    @include respond(md) { grid-template-columns: 1fr 1fr; }
+  }
+
+  // ── Separador
+  &__sep {
+    border: none;
+    border-top: 1px solid rgba(242, 216, 196, 0.1);
+    margin: $space-md 0;
+  }
+
+  // ── Nota de detalle especial
+  &__hint {
+    font-size: $fs-small;
+    color: rgba(242, 216, 196, 0.5);
+    margin-top: 0.4rem;
+  }
+
+  // ── Botón enviar
+  &__btn {
+    @include btn(#E8A33D, #2E1A1F);
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    margin-top: $space-sm;
+    opacity: 0.4;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+
+    &.activo {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  // ── Flecha select personalizada
+  &__select-wrap {
+    position: relative;
+
+    &::after {
+      content: '▾';
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $color-accent;
+      pointer-events: none;
+      font-size: 1rem;
+    }
+  }
+}
+
+// ── Acordeón de opciones (reutiliza Bootstrap accordion, personalizado)
+.pedidos-accordion {
+  .accordion-item {
+    background-color: rgba(255, 248, 242, 0.05);
+    border: 1px solid rgba(242, 216, 196, 0.15);
+    border-radius: $radius-sm !important;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+  }
+
+  .accordion-button {
+    background-color: transparent;
+    color: $color-secondary;
+    font-family: $font-principal;
+    font-weight: 600;
+    font-size: $fs-body;
+    box-shadow: none;
+
+    &:not(.collapsed) {
+      background-color: rgba(232, 163, 61, 0.12);
+      color: $color-accent;
+    }
+
+    &::after {
+      filter: invert(1) sepia(1) saturate(3) hue-rotate(5deg);
+    }
+  }
+
+  .accordion-body {
+    background-color: rgba(255, 248, 242, 0.03);
+    padding: $space-sm $space-md;
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: rgba(255,255,255,0.8);
+      font-size: $fs-body;
+      padding: 0.4rem 0;
+      cursor: pointer;
+      transition: color 0.2s ease;
+
+      &:hover { color: $color-accent; }
+
+      input[type="radio"] {
+        accent-color: $color-accent;
+        width: 16px; height: 16px;
+      }
+    }
+  }
+}
+
+// ── Confirmación visual al enviar
+.pedidos-ok {
+  display: none;
+  text-align: center;
+  padding: $space-lg;
+  color: $color-secondary;
+
+  &__icono { font-size: 3rem; margin-bottom: $space-sm; }
+  &__titulo {
+    font-family: $font-manuscrita;
+    font-size: 2rem;
+    color: $color-accent;
+    margin-bottom: $space-xs;
+  }
+  &__texto { color: rgba(242,216,196,0.7); }
+}
