@@ -616,9 +616,62 @@ button {
   color: #7A6660;
   max-width: 260px;
 }
+.hero-features__mercadopago {
+  height: 50px;
+  width: auto;
+  margin-top: 0.5rem;
+}
 
 .productos {
   padding: 6rem 0;
+}
+.productos__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 992px) {
+  .productos__header {
+    padding-inline: 2rem;
+  }
+}
+.productos__header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .productos__header {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+}
+.productos__logo {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(61, 43, 43, 0.08);
+  overflow: hidden;
+}
+@media (min-width: 992px) {
+  .productos__logo {
+    width: 350px;
+    height: 350px;
+  }
+}
+.productos__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .productos__titulo {
   font-family: "Dancing Script", cursive;
@@ -626,8 +679,9 @@ button {
   font-weight: 700;
   color: #B94E5C;
   line-height: 1.2;
-  text-align: center;
-  margin-bottom: 4rem;
+  text-align: left;
+  margin-bottom: 0;
+  flex: 1;
 }
 
 .producto-seccion {
@@ -1338,3 +1392,5 @@ body.page-pedidos {
 .pedidos-ok__texto {
   color: rgba(242, 216, 196, 0.7);
 }
+
+/*# sourceMappingURL=estilo.css.map */
