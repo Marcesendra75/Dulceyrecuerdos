@@ -19,6 +19,7 @@
 @use 'pages/index';    // estilos del index.html
 @use 'pages/detalle';  // estilos de desayunos, picadas, regalos, box-dulces
 @use 'pages/pedidos';  // página de pedidos
+@use 'pages/quienes-somos';
 
 // ── Cuando agregues una página nueva:
 // 1. Creá sass/pages/_nueva-pagina.scss

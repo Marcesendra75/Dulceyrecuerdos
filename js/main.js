@@ -47,4 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+  // ── Navbar active: marca el link de la página actual
+  const paginaActual = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.navbar__link, .navbar__mobile-link').forEach(link => {
+    const href = link.getAttribute('href').split('/').pop();
+    if (href === paginaActual) {
+      link.classList.add('navbar__link--active');
+    }
+  });
+
 });

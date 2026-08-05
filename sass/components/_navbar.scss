@@ -66,6 +66,12 @@
       color: $color-primary;
       &::after { width: 100%; }
     }
+
+    // ── Link de la página actual
+    &--active {
+      color: $color-primary;
+      &::after { width: 100%; }
+    }
   }
 
   // ── CTA desktop

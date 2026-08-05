@@ -1,0 +1,181 @@
+// ════════════════════════════════════════
+// pages/_quienes-somos.scss
+// ════════════════════════════════════════
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+body.page-quienes-somos {
+  background-color: #EDB0B0;
+}
+
+// ── Header
+.qs-hero {
+  @include container;
+  text-align: center;
+  padding-top: calc(#{$navbar-height} + #{$space-lg});
+  padding-bottom: $space-md;
+
+  &__titulo {
+    @include titulo($fs-hero);
+    margin-bottom: $space-sm;
+  }
+
+  &__texto {
+    max-width: 680px;
+    margin-inline: auto;
+    color: $color-text-light;
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+}
+
+.qs-sep {
+  width: 80px;
+  height: 3px;
+  background-color: $color-primary-dark;
+  border-radius: $radius-pill;
+  margin: $space-md auto $space-lg;
+}
+
+// ── Nube de fotos — mobile: columnas simples
+.qs-nube {
+  @include container;
+  padding-bottom: $space-xl;
+
+  // ── MOBILE: grid simple 2 columnas
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    @include respond(lg) {
+      // ── DESKTOP: contenedor relativo para posicionamiento absoluto
+      display: block;
+      position: relative;
+      height: 680px; // altura del "lienzo" de la nube
+      max-width: 900px;
+      margin-inline: auto;
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    border-radius: $radius-md;
+    border: 4px solid $color-primary-dark;
+    box-shadow: $shadow-medium;
+    cursor: pointer;
+    background-color: $color-primary-dark;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(143, 58, 69, 0);
+      transition: background-color 0.3s ease;
+      border-radius: $radius-md;
+    }
+
+    &:hover {
+      z-index: 10 !important;
+      box-shadow: $shadow-strong;
+      border-color: $color-accent;
+      img { transform: scale(1.08); }
+      &::after { background-color: rgba(143, 58, 69, 0.15); }
+    }
+
+    // Mobile: altura fija uniforme
+    height: 160px;
+
+    @include respond(md) { height: 200px; }
+
+    // ── DESKTOP: posición absoluta, cada foto en su lugar
+    @include respond(lg) {
+      position: absolute;
+      transition: transform 0.4s ease, box-shadow 0.3s ease, border-color 0.3s ease, z-index 0s;
+
+      // foto 1 — grande, arriba izquierda
+      &:nth-child(1) {
+        width: 280px; height: 220px;
+        top: 20px; left: 0px;
+        transform: rotate(-4deg);
+        z-index: 3;
+      }
+      // foto 2 — mediana, arriba centro
+      &:nth-child(2) {
+        width: 200px; height: 180px;
+        top: 0px; left: 240px;
+        transform: rotate(3deg);
+        z-index: 2;
+      }
+      // foto 3 — pequeña, arriba derecha
+      &:nth-child(3) {
+        width: 170px; height: 160px;
+        top: 30px; left: 420px;
+        transform: rotate(-2deg);
+        z-index: 4;
+      }
+      // foto 4 — grande, arriba derecha
+      &:nth-child(4) {
+        width: 250px; height: 210px;
+        top: 10px; left: 560px;
+        transform: rotate(5deg);
+        z-index: 2;
+      }
+      // foto 5 — mediana, medio izquierda
+      &:nth-child(5) {
+        width: 210px; height: 185px;
+        top: 200px; left: 30px;
+        transform: rotate(2deg);
+        z-index: 5;
+      }
+      // foto 6 — pequeña, centro
+      &:nth-child(6) {
+        width: 180px; height: 170px;
+        top: 185px; left: 260px;
+        transform: rotate(-5deg);
+        z-index: 6;
+      }
+      // foto 7 — mediana, centro derecha
+      &:nth-child(7) {
+        width: 230px; height: 195px;
+        top: 195px; left: 430px;
+        transform: rotate(3deg);
+        z-index: 3;
+      }
+      // foto 8 — grande, abajo izquierda
+      &:nth-child(8) {
+        width: 260px; height: 215px;
+        top: 420px; left: 10px;
+        transform: rotate(-3deg);
+        z-index: 4;
+      }
+      // foto 9 — mediana, abajo centro
+      &:nth-child(9) {
+        width: 220px; height: 190px;
+        top: 410px; left: 280px;
+        transform: rotate(4deg);
+        z-index: 5;
+      }
+      // foto 10 — mediana, abajo derecha
+      &:nth-child(10) {
+        width: 200px; height: 175px;
+        top: 430px; left: 520px;
+        transform: rotate(-2deg);
+        z-index: 3;
+      }
+
+      // Al hacer hover se agranda y sube al frente
+      &:hover {
+        transform: scale(1.1) rotate(0deg) !important;
+      }
+    }
+  }
+}

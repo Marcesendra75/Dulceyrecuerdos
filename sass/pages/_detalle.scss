@@ -183,7 +183,9 @@ body.page-box-dulces { background-color: $bg-box-dulces; }
 }
 
 // ── Términos y condiciones
-body.page-terminos { background-color: #FDF5EE; }
+body.page-quienes-somos { background-color: #EDB0B0; }
+
+body.page-terminos { background-color: $bg-terminos; }
 
 .terminos-wrap {
   padding-top: calc(80px + 3rem);
