@@ -41,7 +41,7 @@ body.page-box-dulces { background-color: $bg-box-dulces; }
     .producto-detalle__nombre {
       @include titulo(2.4rem, $color-primary);
     }
-    .producto-detalle__precio { color: $color-accent; }
+    .producto-detalle__precio { color: $color-primary; }
     .producto-detalle__btn    { @include btn($color-accent, $color-text); }
   }
 
