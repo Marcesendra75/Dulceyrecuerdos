@@ -906,6 +906,38 @@ body.page-box-dulces {
 .producto-detalle--destacado .producto-detalle__btn:active {
   transform: translateY(-1px);
 }
+.producto-detalle--destacado-princesas {
+  background-color: #E8D5F5;
+  border-radius: 24px;
+  padding: 2rem;
+  border-bottom: none !important;
+}
+.producto-detalle--destacado-princesas .producto-detalle__nombre {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #6B2D8B;
+  line-height: 1.2;
+}
+.producto-detalle--destacado-princesas .producto-detalle__ingredientes-titulo {
+  color: #6B2D8B;
+}
+.producto-detalle--destacado-princesas .producto-detalle__ingredientes li {
+  color: #6B2D8B;
+}
+.producto-detalle--destacado-princesas .producto-detalle__precio {
+  color: #6B2D8B;
+}
+.producto-detalle--destacado-princesas .producto-detalle__precio span {
+  color: #9B59B6;
+}
+.producto-detalle--destacado-princesas .producto-detalle__btn {
+  background-color: #9B59B6;
+  color: #FFFFFF;
+}
+.producto-detalle--destacado-princesas .producto-detalle__btn:hover {
+  background-color: #6B2D8B;
+}
 .producto-detalle__media {
   display: flex;
   flex-direction: column;
@@ -1605,6 +1637,198 @@ body.page-quienes-somos {
   .qs-nube__item:hover {
     transform: scale(1.1) rotate(0deg) !important;
   }
+}
+
+body.page-kids {
+  background-color: #FFD166;
+  overflow-x: hidden;
+}
+
+@keyframes flotar {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(4deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+@keyframes flotar-inv {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+@keyframes girar-lento {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes latir {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+.kids-deco {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.kids-deco__item {
+  position: absolute;
+  opacity: 0.55;
+  font-size: 2.2rem;
+  user-select: none;
+}
+.kids-deco__item:nth-child(1) {
+  top: 8%;
+  left: 3%;
+  font-size: 2.8rem;
+  animation: flotar 3.2s ease-in-out infinite;
+}
+.kids-deco__item:nth-child(2) {
+  top: 15%;
+  right: 4%;
+  font-size: 2.2rem;
+  animation: flotar-inv 2.8s ease-in-out infinite;
+}
+.kids-deco__item:nth-child(3) {
+  top: 25%;
+  left: 7%;
+  font-size: 1.8rem;
+  animation: latir 2s ease-in-out infinite;
+}
+.kids-deco__item:nth-child(4) {
+  top: 40%;
+  right: 2%;
+  font-size: 2.4rem;
+  animation: flotar 4s ease-in-out infinite;
+}
+.kids-deco__item:nth-child(5) {
+  top: 55%;
+  left: 1%;
+  font-size: 2rem;
+  animation: flotar-inv 3.5s ease-in-out infinite;
+}
+.kids-deco__item:nth-child(6) {
+  top: 65%;
+  right: 5%;
+  font-size: 1.6rem;
+  animation: latir 1.8s ease-in-out infinite 0.4s;
+}
+.kids-deco__item:nth-child(7) {
+  top: 75%;
+  left: 4%;
+  font-size: 2.5rem;
+  animation: flotar 3.8s ease-in-out infinite 0.5s;
+}
+.kids-deco__item:nth-child(8) {
+  top: 82%;
+  right: 3%;
+  font-size: 2.2rem;
+  animation: flotar-inv 2.6s ease-in-out infinite 0.2s;
+}
+.kids-deco__item:nth-child(9) {
+  top: 90%;
+  left: 8%;
+  font-size: 2rem;
+  animation: flotar 3s ease-in-out infinite 0.7s;
+}
+.kids-deco__item:nth-child(10) {
+  top: 35%;
+  left: 92%;
+  font-size: 2.6rem;
+  animation: girar-lento 8s linear infinite;
+}
+
+.kids-hero {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 992px) {
+  .kids-hero {
+    padding-inline: 2rem;
+  }
+}
+.kids-hero {
+  text-align: center;
+  padding-top: calc(80px + 4rem);
+  padding-bottom: 2rem;
+}
+.kids-hero__titulo {
+  font-family: "Dancing Script", cursive;
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: #FF6B9D;
+  text-shadow: 3px 3px 0px rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .kids-hero__titulo {
+    font-size: 5rem;
+  }
+}
+.kids-hero__subtitulo {
+  font-size: 1.1rem;
+  color: #8B4513;
+  font-weight: 600;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.kids-sep {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #FF6B9D, #4ECDC4, #FFD166);
+  border-radius: 50px;
+  margin: 2rem auto 4rem;
+}
+
+.page-kids .producto-detalle {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.45);
+  border-radius: 24px;
+  margin-bottom: 2rem;
+}
+.page-kids .producto-detalle:not(:last-child) {
+  border-bottom: none !important;
+}
+.page-kids .producto-detalle__nombre {
+  color: #FF6B9D;
+  font-size: 2rem;
+}
+.page-kids .producto-detalle__precio {
+  color: #4ECDC4;
+  font-weight: 800;
+}
+.page-kids .producto-detalle__btn {
+  background-color: #FF6B9D;
+}
+.page-kids .producto-detalle__btn:hover {
+  background-color: #e0527f;
+}
+.page-kids .producto-detalle--destacado-princesas {
+  background-color: #E8D5F5 !important;
 }
 
 /*# sourceMappingURL=estilo.css.map */

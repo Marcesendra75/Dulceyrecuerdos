@@ -45,6 +45,37 @@ body.page-box-dulces { background-color: $bg-box-dulces; }
     .producto-detalle__btn    { @include btn($color-accent, $color-text); }
   }
 
+  // ── Producto especial Princesas (fondo lavanda, texto violeta)
+  &--destacado-princesas {
+    background-color: #E8D5F5;
+    border-radius: 24px;
+    padding: 2rem;
+    border-bottom: none !important;
+
+    .producto-detalle__nombre {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #6B2D8B;
+      line-height: 1.2;
+    }
+
+    .producto-detalle__ingredientes-titulo { color: #6B2D8B; }
+
+    .producto-detalle__ingredientes li { color: #6B2D8B; }
+
+    .producto-detalle__precio {
+      color: #6B2D8B;
+      span { color: #9B59B6; }
+    }
+
+    .producto-detalle__btn {
+      background-color: #9B59B6;
+      color: #FFFFFF;
+      &:hover { background-color: #6B2D8B; }
+    }
+  }
+
   // ── Carrusel 350×350
   &__media { @include flex-col(center, center, $space-xs); }
 

@@ -20,6 +20,8 @@
 @use 'pages/detalle';  // estilos de desayunos, picadas, regalos, box-dulces
 @use 'pages/pedidos';  // página de pedidos
 @use 'pages/quienes-somos';
+@use 'pages/kids';        // página Desayunos Kids
+
 
 // ── Cuando agregues una página nueva:
 // 1. Creá sass/pages/_nueva-pagina.scss

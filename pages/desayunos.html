@@ -24,6 +24,7 @@
         <a href="../pages/picadas.html"    class="navbar__link">Picadas</a>
         <a href="../pages/regalos.html"    class="navbar__link">Regalos Personalizados</a>
         <a href="../pages/box-dulces.html" class="navbar__link">Box Dulces</a>
+        <a href="../pages/desayunos-kids.html" class="navbar__link">🎈 Kids</a>
         <a href="../pages/quienes-somos.html" class="navbar__link">Quiénes Somos</a>
       </nav>
       <a href="pedidos.html" class="navbar__cta">Pedí ahora</a>
@@ -34,10 +35,10 @@
       <a href="../pages/picadas.html"    class="navbar__mobile-link">Picadas</a>
       <a href="../pages/regalos.html"    class="navbar__mobile-link">Regalos Personalizados</a>
       <a href="../pages/box-dulces.html" class="navbar__mobile-link">Box Dulces</a>
+      <a href="../pages/desayunos-kids.html" class="navbar__link">🎈 Kids</a>
       <a href="../index.html#quienes-somos" class="navbar__mobile-link">Quiénes Somos</a>
       <a href="pedidos.html" class="navbar__mobile-cta">Pedí ahora</a>
     </nav>
-    <div class="navbar__overlay"></div>
   </header>
 <main>
   <h1 class="detalle-titulo">Nuestros Desayunos</h1>
@@ -423,6 +424,73 @@
       </div>
     </div>
 
+    <!-- ═══ Desayuno Sin TACC ═══ -->
+    <article class="producto-detalle" id="sin-tacc">
+      <div class="producto-detalle__media">
+        <div class="producto-detalle__carousel">
+          <div id="carousel-sin-tacc" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carousel-sin-tacc" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#carousel-sin-tacc" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#carousel-sin-tacc" data-bs-slide-to="2"></button>
+              <button type="button" data-bs-target="#carousel-sin-tacc" data-bs-slide-to="3"></button>
+            </div>
+            <div class="carousel-inner" data-bs-toggle="modal" data-bs-target="#modal-sin-tacc">
+              <div class="carousel-item  active"><img src="../img/sin-tacc-1.jpg" alt="Desayuno Sin TACC foto 1"></div>
+              <div class="carousel-item"><img src="../img/sin-tacc-2.jpg" alt="Desayuno Sin TACC foto 2"></div>
+              <div class="carousel-item"><img src="../img/sin-tacc-3.jpg" alt="Desayuno Sin TACC foto 3"></div>
+              <div class="carousel-item"><img src="../img/sin-tacc-4.jpg" alt="Desayuno Sin TACC foto 4"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-sin-tacc" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-sin-tacc" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+          </div>
+        </div>
+        <div class="producto-detalle__thumbs">
+          <button class="producto-detalle__thumb  is-active" data-bs-target="#carousel-sin-tacc" data-bs-slide-to="0"><img src="../img/sin-tacc-1.jpg" alt="miniatura 1"></button>
+          <button class="producto-detalle__thumb" data-bs-target="#carousel-sin-tacc" data-bs-slide-to="1"><img src="../img/sin-tacc-2.jpg" alt="miniatura 2"></button>
+          <button class="producto-detalle__thumb" data-bs-target="#carousel-sin-tacc" data-bs-slide-to="2"><img src="../img/sin-tacc-3.jpg" alt="miniatura 3"></button>
+          <button class="producto-detalle__thumb" data-bs-target="#carousel-sin-tacc" data-bs-slide-to="3"><img src="../img/sin-tacc-4.jpg" alt="miniatura 4"></button>
+        </div>
+      </div>
+      <div class="producto-detalle__contenido">
+        <h2 class="producto-detalle__nombre">Desayuno Sin TACC</h2>
+        <p class="producto-detalle__ingredientes-titulo">Ingredientes</p>
+        <ul class="producto-detalle__ingredientes">
+          <li>Ingrediente 1 (completar)</li>
+          <li>Ingrediente 2 (completar)</li>
+          <li>Ingrediente 3 (completar)</li>
+          <li>Ingrediente 4 (completar)</li>
+        </ul>
+        <p class="producto-detalle__precio">$0.000<span>/ unidad</span></p>
+        <a href="pedidos.html" class="producto-detalle__btn">Pedir ahora</a>
+      </div>
+    </article>
+    <!-- Modal Sin TACC -->
+    <div class="modal fade modal-zoom" id="modal-sin-tacc" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          <div class="modal-body">
+            <div id="modal-sin-tacc-c" class="carousel slide" data-bs-ride="false">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#modal-sin-tacc-c" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#modal-sin-tacc-c" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#modal-sin-tacc-c" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#modal-sin-tacc-c" data-bs-slide-to="3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item  active"><img src="../img/sin-tacc-1.jpg" alt="Sin TACC ampliada 1"></div>
+                <div class="carousel-item"><img src="../img/sin-tacc-2.jpg" alt="Sin TACC ampliada 2"></div>
+                <div class="carousel-item"><img src="../img/sin-tacc-3.jpg" alt="Sin TACC ampliada 3"></div>
+                <div class="carousel-item"><img src="../img/sin-tacc-4.jpg" alt="Sin TACC ampliada 4"></div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#modal-sin-tacc-c" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+              <button class="carousel-control-next" type="button" data-bs-target="#modal-sin-tacc-c" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- ═══ Desayuno Dulce Despertar ═══ -->
     <article class="producto-detalle producto-detalle--destacado" id="dulce-despertar">
       <div class="producto-detalle__media">
@@ -513,6 +581,7 @@
           <a href="../pages/picadas.html"    class="footer__link">Picadas</a>
           <a href="../pages/regalos.html"    class="footer__link">Regalos Personalizados</a>
           <a href="../pages/box-dulces.html" class="footer__link">Box Dulces</a>
+          <a href="../pages/desayunos-kids.html" class="footer__link">🎈 Desayunos Kids</a>
           <a href="../pages/quienes-somos.html" class="footer__link">Quiénes Somos</a>
           <a href="terminos.html"                    class="footer__link">Términos y Condiciones</a>
         </nav>
