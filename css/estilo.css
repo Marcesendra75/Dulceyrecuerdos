@@ -427,9 +427,26 @@ button {
 .footer__bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1rem 0;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+}
+.footer__firma {
+  display: inline-block;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+.footer__firma:hover {
+  opacity: 1;
+}
+.footer__firma img {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
 .hero-carousel {
