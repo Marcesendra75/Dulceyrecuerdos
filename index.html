@@ -160,6 +160,144 @@
     </div>
   </section>
 
+  <!-- ══ PROMOCIÓN ESPECIAL ══ -->
+  <section class="promo-especial">
+    <div class="promo-especial__inner">
+      <h2 class="promo-especial__titulo">Promoción Día de la Madre</h2>
+      <div class="promo-especial__grid">
+
+        <!-- ── Card 1 ── -->
+        <article class="promo-especial__card reveal">
+          <div class="promo-especial__imagen">
+            <div id="promoCarousel1" class="carousel slide promo-especial__carousel" data-bs-ride="false">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#promoCarousel1" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#promoCarousel1" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#promoCarousel1" data-bs-slide-to="2"></button>
+              </div>
+              <div class="carousel-inner" data-bs-toggle="modal" data-bs-target="#promoZoom1">
+                <div class="carousel-item active">
+                  <img src="./img/promo-madre-1.png" alt="Box Sorpresa Mamá">
+                </div>
+                <div class="carousel-item">
+                  <img src="./img/promo-madre-1b.png" alt="Box Sorpresa Mamá - detalle">
+                </div>
+                <div class="carousel-item">
+                  <img src="./img/promo-madre-1c.png" alt="Box Sorpresa Mamá - contenido">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel1" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel1" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          <div class="promo-especial__contenido">
+            <h3 class="promo-especial__nombre">Box Sorpresa Mamá</h3>
+            <ul class="promo-especial__ingredientes">
+              <li>Café o té + medialunas artesanales y tostadas dulces</li>
+              <li>Mermeladas caseras + jugo natural exprimido</li>
+              <li>Tarjeta personalizada con dedicatoria especial</li>
+            </ul>
+            <p class="promo-especial__precio">$8.500</p>
+            <a href="pages/pedidos.html" class="promo-especial__btn">Pedir ahora</a>
+          </div>
+        </article>
+
+        <!-- Modal zoom Card 1 -->
+        <div class="modal fade modal-zoom" id="promoZoom1" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-body position-relative">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div id="promoZoomCarousel1" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active"><img src="./img/promo-madre-1.png" alt="Box Sorpresa Mamá"></div>
+                    <div class="carousel-item"><img src="./img/promo-madre-1b.png" alt="Box Sorpresa Mamá - detalle"></div>
+                    <div class="carousel-item"><img src="./img/promo-madre-1c.png" alt="Box Sorpresa Mamá - contenido"></div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#promoZoomCarousel1" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#promoZoomCarousel1" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Card 2 ── -->
+        <article class="promo-especial__card reveal">
+          <div class="promo-especial__imagen">
+            <div id="promoCarousel2" class="carousel slide promo-especial__carousel" data-bs-ride="false">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#promoCarousel2" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#promoCarousel2" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#promoCarousel2" data-bs-slide-to="2"></button>
+              </div>
+              <div class="carousel-inner" data-bs-toggle="modal" data-bs-target="#promoZoom2">
+                <div class="carousel-item active">
+                  <img src="./img/promo-madre-2.png" alt="Desayuno Para Dos">
+                </div>
+                <div class="carousel-item">
+                  <img src="./img/promo-madre-2b.png" alt="Desayuno Para Dos - detalle">
+                </div>
+                <div class="carousel-item">
+                  <img src="./img/promo-madre-2c.png" alt="Desayuno Para Dos - contenido">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel2" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel2" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          <div class="promo-especial__contenido">
+            <h3 class="promo-especial__nombre">Desayuno Para Dos — Mamá &amp; Vos</h3>
+            <ul class="promo-especial__ingredientes">
+              <li>Café, tés + medialunas, facturas y scones para dos</li>
+              <li>Mermeladas, queso crema + jugo natural para dos</li>
+              <li>Dedicatoria personalizada incluida</li>
+            </ul>
+            <p class="promo-especial__precio">$14.500</p>
+            <a href="pages/pedidos.html" class="promo-especial__btn">Pedir ahora</a>
+          </div>
+        </article>
+
+        <!-- Modal zoom Card 2 -->
+        <div class="modal fade modal-zoom" id="promoZoom2" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-body position-relative">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div id="promoZoomCarousel2" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active"><img src="./img/promo-madre-2.png" alt="Desayuno Para Dos"></div>
+                    <div class="carousel-item"><img src="./img/promo-madre-2b.png" alt="Desayuno Para Dos - detalle"></div>
+                    <div class="carousel-item"><img src="./img/promo-madre-2c.png" alt="Desayuno Para Dos - contenido"></div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#promoZoomCarousel2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#promoZoomCarousel2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ══ NUESTROS PRODUCTOS ══ -->
   <section class="productos" id="productos">
     <div class="productos__header">
@@ -243,7 +381,7 @@
             <img src="https://www.google.com/s2/favicons?domain=whatsapp.com&sz=64" alt="WhatsApp"></a>
         </div>
       </div>
-      
+
       <div>
         <p class="footer__titulo">Productos</p>
         <nav class="footer__links">

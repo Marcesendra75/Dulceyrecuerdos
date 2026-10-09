@@ -217,3 +217,144 @@
     .producto-seccion__contenido { order: 0; }
   }
 }
+
+
+// ── PROMOCIÓN ESPECIAL (fechas especiales — contenido intercambiable)
+.promo-especial {
+  background-color: $color-primary-dark;
+  padding: $space-xl 0;
+
+  &__inner { @include container; }
+
+  &__titulo {
+    font-family: $font-manuscrita;
+    font-size: $fs-titulo;
+    color: $color-secondary;
+    text-align: center;
+    margin-bottom: $space-lg;
+    @include respond(md) { font-size: $fs-hero; }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-lg;
+    @include respond(lg) { grid-template-columns: 1fr 1fr; }
+  }
+
+  &__card {
+    background-color: rgba(255, 248, 242, 0.06);
+    border: 1px solid rgba(242, 216, 196, 0.15);
+    border-radius: $radius-lg;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: $shadow-medium;
+    transition: transform $trans-medium, box-shadow $trans-medium;
+    &:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.25); }
+  }
+
+  // ── Carrusel dentro de la card promo
+  &__carousel {
+    width: 100%;
+    height: 220px;                              // mobile — pantallas chicas
+
+    @include respond(sm) { height: 260px; }    // ≥ 576px
+    @include respond(md) { height: 280px; }    // ≥ 768px
+
+    .carousel-inner,
+    .carousel-item { height: 100%; }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $trans-slow;
+    }
+
+    .carousel-inner { cursor: zoom-in; }
+
+    .carousel-indicators {
+      margin-bottom: 0.5rem;
+      [data-bs-target] {
+        width: 6px; height: 6px;
+        border-radius: 50%;
+        background-color: $color-white;
+        opacity: 0.55;
+        margin: 0 3px;
+        border: none;
+      }
+      .active { opacity: 1; }
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 12%;
+      opacity: 0;
+      transition: opacity $trans-fast;
+    }
+    &:hover .carousel-control-prev,
+    &:hover .carousel-control-next { opacity: 0.85; }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon { width: 1.2rem; height: 1.2rem; }
+  }
+
+  &__contenido {
+    padding: $space-md;
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+    flex: 1;
+  }
+
+  &__nombre {
+    font-family: $font-manuscrita;
+    font-size: 1.7rem;
+    color: $color-secondary;
+    margin: 0;
+  }
+
+  // Lista de ingredientes con bullet •
+  &__ingredientes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex: 1;
+
+    li {
+      color: rgba(242, 216, 196, 0.85);
+      font-size: $fs-body;
+      line-height: 1.55;
+      padding-left: 1.2rem;
+      position: relative;
+
+      &::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: $color-accent;
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+    }
+  }
+
+  // Precio destacado
+  &__precio {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-secondary;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  &__btn {
+    @include btn($color-accent, $color-text);
+    align-self: flex-start;
+    margin-top: $space-xs;
+  }
+}
