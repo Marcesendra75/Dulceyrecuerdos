@@ -56,4 +56,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // ── Miniaturas cards promo (promo-especial)
+  // Sincroniza is-active entre thumbs y carrusel Bootstrap
+  document.querySelectorAll('.promo-especial__carousel').forEach(carouselEl => {
+    const id = carouselEl.id;
+    if (!id) return;
+
+    const thumbs = document.querySelectorAll(
+      `.promo-especial__thumb[data-bs-target="#${id}"]`
+    );
+    if (!thumbs.length) return;
+
+    // Click en miniatura → ir al slide
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        const slideTo = parseInt(thumb.dataset.bsSlideTo, 10);
+        bootstrap.Carousel.getOrCreateInstance(carouselEl).to(slideTo);
+      });
+    });
+
+    // Carrusel cambia → mover is-active a la miniatura correspondiente
+    carouselEl.addEventListener('slid.bs.carousel', e => {
+      thumbs.forEach(t => t.classList.remove('is-active'));
+      const active = document.querySelector(
+        `.promo-especial__thumb[data-bs-target="#${id}"][data-bs-slide-to="${e.to}"]`
+      );
+      active?.classList.add('is-active');
+    });
+  });
+
 });
