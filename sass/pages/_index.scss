@@ -221,27 +221,37 @@
 
 // ── PROMOCIÓN ESPECIAL (fechas especiales — contenido intercambiable)
 .promo-especial {
-  background-color: $color-primary-dark;
-  padding: $space-xl 0;
+  background-color: $color-primary-dark;   // #8F3A45 — siempre visible
+  padding: $space-lg 0;                    // mobile: menos padding vertical
+
+  @include respond(md) { padding: $space-xl 0; }
 
   &__inner { @include container; }
 
+  // ── Título sección  (mobile-first)
   &__titulo {
     font-family: $font-manuscrita;
-    font-size: $fs-titulo;
+    font-size: 2rem;                        // mobile: más chico
     color: $color-secondary;
     text-align: center;
-    margin-bottom: $space-lg;
-    @include respond(md) { font-size: $fs-hero; }
+    margin-bottom: $space-md;
+
+    @include respond(sm) { font-size: $fs-titulo; }    // ≥576 → 2.6rem
+    @include respond(md) { font-size: $fs-hero;        // ≥768 → 3.2rem
+                           margin-bottom: $space-lg; }
   }
 
+  // ── Grid de cards
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $space-lg;
+    gap: $space-md;
+
+    @include respond(md) { gap: $space-lg; }
     @include respond(lg) { grid-template-columns: 1fr 1fr; }
   }
 
+  // ── Card individual
   &__card {
     background-color: rgba(255, 248, 242, 0.06);
     border: 1px solid rgba(242, 216, 196, 0.15);
@@ -251,7 +261,10 @@
     flex-direction: column;
     box-shadow: $shadow-medium;
     transition: transform $trans-medium, box-shadow $trans-medium;
-    &:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.25); }
+
+    @include respond(md) {
+      &:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.25); }
+    }
   }
 
   // ── Zona imagen: carrusel + miniaturas
@@ -259,13 +272,15 @@
     background-color: rgba(0, 0, 0, 0.15);
   }
 
-  // ── Carrusel dentro de la card promo
+  // ── Carrusel dentro de la card promo (mobile-first)
   &__carousel {
     width: 100%;
-    height: 220px;                              // mobile — pantallas chicas
+    height: 200px;                           // 0–575px (muy chico)
 
-    @include respond(sm) { height: 260px; }    // ≥ 576px
-    @include respond(md) { height: 280px; }    // ≥ 768px
+    @include respond(sm) { height: 240px; } // ≥ 576px
+    @include respond(md) { height: 300px; } // ≥ 768px
+    @include respond(lg) { height: 280px; } // ≥ 992px (2 columnas, más angosto)
+    @include respond(xl) { height: 320px; } // ≥ 1200px
 
     .carousel-inner,
     .carousel-item { height: 100%; }
@@ -280,7 +295,7 @@
     .carousel-inner { cursor: zoom-in; }
 
     .carousel-indicators {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       [data-bs-target] {
         width: 6px; height: 6px;
         border-radius: 50%;
@@ -294,37 +309,49 @@
 
     .carousel-control-prev,
     .carousel-control-next {
-      width: 12%;
-      opacity: 0;
+      width: 14%;
+      opacity: 0.7;                         // siempre visible en mobile (sin hover)
       transition: opacity $trans-fast;
     }
-    &:hover .carousel-control-prev,
-    &:hover .carousel-control-next { opacity: 0.85; }
+
+    @include respond(md) {
+      .carousel-control-prev,
+      .carousel-control-next { opacity: 0; } // desktop: solo al hover
+      &:hover .carousel-control-prev,
+      &:hover .carousel-control-next { opacity: 0.85; }
+    }
 
     .carousel-control-prev-icon,
     .carousel-control-next-icon { width: 1.2rem; height: 1.2rem; }
   }
 
-  // ── Tira de miniaturas
+  // ── Tira de miniaturas (mobile-first)
   &__thumbs {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: $space-xs;
-    padding: $space-xs $space-sm;
-    background-color: rgba(0, 0, 0, 0.2);
+    gap: 6px;                               // gap fijo, no variable
+    padding: 8px 12px;
+    background-color: rgba(0, 0, 0, 0.25);
+    flex-wrap: nowrap;                      // evita que salten de línea
   }
 
+  // ── Miniatura individual (mobile-first)
   &__thumb {
-    width: 52px;
-    height: 52px;
+    width: 44px;                            // mobile: más pequeño
+    height: 44px;
     border-radius: $radius-sm;
     overflow: hidden;
     border: 2px solid transparent;
     cursor: pointer;
-    opacity: 0.55;
+    opacity: 0.5;
     transition: opacity $trans-fast, border-color $trans-fast;
     flex-shrink: 0;
+
+    @include respond(sm) {                  // ≥ 576px: tamaño normal
+      width: 52px;
+      height: 52px;
+    }
 
     img {
       width: 100%;
@@ -340,38 +367,48 @@
     }
   }
 
-  // ── Contenido de la card (título, ingredientes, precio, botón)
+  // ── Contenido de la card (mobile-first)
   &__contenido {
-    padding: $space-xs $space-md $space-md;   // top reducido: xs (0.5rem) en vez de md (2rem)
+    padding: $space-xs $space-sm $space-sm;   // mobile: padding chico
     display: flex;
     flex-direction: column;
-    gap: $space-sm;
+    gap: 0.5rem;
     flex: 1;
+
+    @include respond(sm) {                    // ≥576px: un poco más de aire
+      padding: $space-xs $space-md $space-md;
+      gap: $space-sm;
+    }
   }
 
+  // ── Nombre de la promo
   &__nombre {
     font-family: $font-manuscrita;
-    font-size: 1.7rem;
+    font-size: 1.4rem;                        // mobile más chico
     color: $color-secondary;
     margin: 0;
+
+    @include respond(sm) { font-size: 1.7rem; }
   }
 
-  // Lista de ingredientes con bullet •
+  // ── Lista de ingredientes con bullet •
   &__ingredientes {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.3rem;
     flex: 1;
 
     li {
       color: rgba(242, 216, 196, 0.85);
-      font-size: $fs-body;
-      line-height: 1.55;
-      padding-left: 1.2rem;
+      font-size: 0.875rem;                    // mobile: un poco más chico
+      line-height: 1.5;
+      padding-left: 1.1rem;
       position: relative;
+
+      @include respond(sm) { font-size: $fs-body; }
 
       &::before {
         content: '•';
@@ -379,23 +416,33 @@
         left: 0;
         color: $color-accent;
         font-size: 1rem;
-        line-height: 1.55;
+        line-height: 1.5;
       }
     }
   }
 
-  // Precio destacado
+  // ── Precio destacado
   &__precio {
-    font-size: 2rem;
+    font-size: 1.6rem;                        // mobile más chico
     font-weight: 700;
     color: $color-secondary;
     margin: 0;
     letter-spacing: -0.01em;
+
+    @include respond(sm) { font-size: 2rem; }
   }
 
+  // ── Botón
   &__btn {
     @include btn($color-accent, $color-text);
     align-self: flex-start;
     margin-top: $space-xs;
+    font-size: 0.9rem;                        // mobile: botón un poco más chico
+    padding: 0.7rem 1.5rem;
+
+    @include respond(sm) {
+      font-size: 1rem;
+      padding: 0.9rem 2rem;
+    }
   }
 }
